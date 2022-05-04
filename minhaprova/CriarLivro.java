@@ -43,6 +43,7 @@ public class CriarLivro {
 				biblioteca.excluir(posExcluir); 
 				break;
 			case 9: 
+				System.out.println("Operação Finalizada!");
 				break;
 			default: 
 				System.err.print("Número inválido.");
