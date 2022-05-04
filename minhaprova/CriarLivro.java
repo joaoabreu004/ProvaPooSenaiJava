@@ -12,32 +12,33 @@ public class CriarLivro {
 	
 		int num = 0; 
 		do {
-			System.out.println("Qual opÃ§Ã£o vocÃª deja realizar?: 1: Novo Cadastro | 2: Alterar o Cadastro | 3: Excluir Cadastro | 9: Sair do Sistema");
+			System.out.println("Qual operação você deja realizar?: 1: Novo Cadastro | 2: Alterar o Cadastro | 3: Excluir Cadastro | 9: Sair do Sistema");
 			num = leia .nextInt();
 			
 			switch(num){
 			case 1:
 				Livro livro = new Livro(); 
-				System.out.print("Escreva o TÃ­tulo do Livro?: ");
+				System.out.print("Escreva o título do livro?: ");
 				livro.setTitulo(leiaTxt.nextLine());
 				System.out.print("Qual o autor do Livro?: ");
 				livro.setAutor(leiaTxt.nextLine());
 				System.out.print("Qual o ISBN do Livro?: ");
 				livro.setIsbn(leiaTxt.nextLine());
-				System.out.print("Qual Ã© a quantidade de pÃ¡ginas do Livro: ");
+				System.out.print("Qual é a quantidade de páginas do Livro: ");
 				livro.setQtdPagina(leiaTxt.nextLine());
 				biblioteca.adicionar(livro);
+				System.out.println("======================================");
 				break; 
 			case 2: 
-				System.out.println("Adicione o tÃ­tulo do Livro que vocÃª deseja alterar: ");
+				System.out.println("Adicione o títuloo do Livro que você deseja alterar: ");
 				int pos = biblioteca.buscar(leiaTxt.nextLine());
 				Livro temp = biblioteca.mostrar(pos);
-				System.out.println("Altere o tÃ­tulo do Livro: ");
+				System.out.println("Altere o título do Livro: ");
 				temp.setTitulo(leiaTxt.nextLine());
 				biblioteca.alterar(pos, temp);
 				break; 
 			case 3: 
-				System.out.print("Escolha a posiÃ§Ã£o em que o livro se encontra: ");
+				System.out.print("Escolha a posição em que o livro se encontra: ");
 				int posExcluir = leia.nextInt(); 
 				biblioteca.excluir(posExcluir); 
 				break;
@@ -45,7 +46,7 @@ public class CriarLivro {
 				System.out.println("Operação Finalizada!");
 				break;
 			default: 
-				System.err.print("NÃºmero invÃ¡lido.");
+				System.err.print("Número inválido.");
 			} 
 		} while( num != 9); 		
 	}
